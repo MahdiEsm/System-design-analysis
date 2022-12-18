@@ -49,8 +49,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>Powered by M.PirJamaat</footer>
     </div>
   );
 }
