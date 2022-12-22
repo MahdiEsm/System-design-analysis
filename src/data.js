@@ -39,3 +39,38 @@ export const categories = [
       title: "LIGHT JACKETS",
     },
   ];
+
+  export const popularProducts = [
+    {
+      id:1,
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
+    },
+    {
+      id:2,
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
+    },
+    {
+      id:3,
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
+    },
+    {
+      id:4,
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
+    },
+    {
+      id:5,
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
+    },
+    {
+      id:6,
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
+    },
+    {
+      id:7,
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
+    },
+    {
+      id:8,
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
+    },
+  ]
