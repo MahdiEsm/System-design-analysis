@@ -7,7 +7,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -66,6 +66,9 @@ const InfoContainer = styled.div`
 
 const Title = styled.h1`
   font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Desc = styled.p`
@@ -104,7 +107,7 @@ const Slider = () => {
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
+              <Desc style={{textAlign: 'right'}} >{item.desc}</Desc>
               <Button>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
