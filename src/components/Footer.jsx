@@ -76,11 +76,7 @@ const ContactItem = styled.div`
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-`;
-  
-const Payment = styled.img`
-      width: 50%;
-`;
+`;  
   
 const Footer = () => {
     return (
@@ -96,7 +92,6 @@ const Footer = () => {
           <ContactItem>
             <MailOutlineIcon style={{marginRight:"10px"}} /> ایمیل :
           </ContactItem>
-          <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Left>
         <Center>
           <Title>لینک های مفید</Title>
