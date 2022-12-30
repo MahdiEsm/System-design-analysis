@@ -26,17 +26,20 @@ export const categories = [
     {
       id: 1,
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8Yj-4yK8tOxAFBWzAyvs22SeipbtCviX3w&usqp=CAU",
-      title: "SHIRT STYLE!",
+      title: "Airpod",
+      cat: "Airpod"
     },
     {
       id: 2,
       img: "https://www.finds.ir/img/2018092679100243.jpg",
-      title: "LOUNGEWEAR LOVE",
+      title: "Phone",
+      cat: "Phone"
     },
     {
       id: 3,
       img: "https://www.finds.ir/img/2018092679100243.jpg",
-      title: "LIGHT JACKETS",
+      title: "Laptop",
+      cat: "Laptop"
     },
   ];
 
