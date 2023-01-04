@@ -45,35 +45,56 @@ export const categories = [
 
   export const popularProducts = [
     {
-      id:1,
+      id: "a",
+      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8Yj-4yK8tOxAFBWzAyvs22SeipbtCviX3w&usqp=CAU",
+    },
+    {
+      id: "b",
       img:"https://www.finds.ir/img/2018092679100243.jpg",
     },
     {
-      id:2,
+      id: "c",
       img:"https://www.finds.ir/img/2018092679100243.jpg",
     },
     {
-      id:3,
+      id: "d",
       img:"https://www.finds.ir/img/2018092679100243.jpg",
     },
     {
-      id:4,
+      id: "e",
       img:"https://www.finds.ir/img/2018092679100243.jpg",
     },
     {
-      id:5,
+      id: "f",
       img:"https://www.finds.ir/img/2018092679100243.jpg",
     },
     {
-      id:6,
+      id: "g",
       img:"https://www.finds.ir/img/2018092679100243.jpg",
     },
     {
-      id:7,
-      img:"https://www.finds.ir/img/2018092679100243.jpg",
-    },
-    {
-      id:8,
+      id: "h",
       img:"https://www.finds.ir/img/2018092679100243.jpg",
     },
   ]
+
+  export const AllProducts = [
+    {
+      id: 1,
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8Yj-4yK8tOxAFBWzAyvs22SeipbtCviX3w&usqp=CAU",
+      title: "Airpod",
+      desc: "برای ارائه قابلیت حذف نویز فعال تا 2 برابر بیشتر مهندسی شده است. شفافیت تطبیقی نویز خارجی را کاهش می دهد، در حالی که صدای فضایی شخصی شما را در صدا غرق می کند. یک بار شارژ تا 6 ساعت عمر باتری را ارائه می دهد",
+      categories: "Airpod",
+      color: "black",
+      price: "900000",
+    },
+    {
+      id: 2,
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8Yj-4yK8tOxAFBWzAyvs22SeipbtCviX3w&usqp=CAU",
+      title: "Airpo",
+      desc: "برای ارائه قابلیت حذف نویز فعال تا 2 برابر بیشتر مهندسی شده است. شفافیت تطبیقی نویز خارجی را کاهش می دهد، در حالی که صدای فضایی شخصی شما را در صدا غرق می کند. یک بار شارژ تا 6 ساعت عمر باتری را ارائه می دهد",
+      categories: "Airpd",
+      color: "black",
+      price: "900000",
+    }
+  ];

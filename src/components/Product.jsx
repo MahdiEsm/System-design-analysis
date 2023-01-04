@@ -2,6 +2,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
   
 const Info = styled.div`
     opacity: 0;
@@ -74,7 +75,9 @@ const Product = ({ item }) => {
             <AddShoppingCartIcon />
           </Icon>
           <Icon>
+            <Link to={`/product/${item.id}`}>
             <SearchIcon />
+            </Link>
           </Icon>
           <Icon>
             <FavoriteBorderIcon />
