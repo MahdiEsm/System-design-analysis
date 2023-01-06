@@ -74,27 +74,18 @@ export const categories = [
     },
     {
       id: "h",
-      img:"https://www.finds.ir/img/2018092679100243.jpg",
+      img:"C",
     },
   ]
 
-  export const AllProducts = [
+  export const cartProducts = [
     {
       id: 1,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8Yj-4yK8tOxAFBWzAyvs22SeipbtCviX3w&usqp=CAU",
-      title: "Airpod",
-      desc: "برای ارائه قابلیت حذف نویز فعال تا 2 برابر بیشتر مهندسی شده است. شفافیت تطبیقی نویز خارجی را کاهش می دهد، در حالی که صدای فضایی شخصی شما را در صدا غرق می کند. یک بار شارژ تا 6 ساعت عمر باتری را ارائه می دهد",
+      img: "https://www.finds.ir/img/2018092679100243.jpg",
+      title: "Beats Pro هدفون بیتس پرو ",
+      desc: " قابل تا شدن جهت حمل نقل آسان ارائه صدای شفاف و فرکانس‌های بسیار دقیق،ایده آل برای تدوینگران صوتی صدای بیس فوق‌العاده رسا و با کیفیت بدنه تمام آلومینیومی " ,
       categories: "Airpod",
       color: "black",
-      price: "900000",
+      price: 900000,
     },
-    {
-      id: 2,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8Yj-4yK8tOxAFBWzAyvs22SeipbtCviX3w&usqp=CAU",
-      title: "Airpo",
-      desc: "برای ارائه قابلیت حذف نویز فعال تا 2 برابر بیشتر مهندسی شده است. شفافیت تطبیقی نویز خارجی را کاهش می دهد، در حالی که صدای فضایی شخصی شما را در صدا غرق می کند. یک بار شارژ تا 6 ساعت عمر باتری را ارائه می دهد",
-      categories: "Airpd",
-      color: "black",
-      price: "900000",
-    }
   ];

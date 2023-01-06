@@ -1,11 +1,15 @@
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
+import { useLocation } from 'react-router-dom';
+import { cartProducts } from "../data";
 
 const Container = styled.div``;
 
@@ -110,7 +114,21 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        setProduct(cartProducts);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+
 
   const handleQuantity = (type) => {
     if (type === "dec") {
@@ -120,13 +138,21 @@ const Product = () => {
     }
   };
 
+  const handleClick = () => {
+    dispatch(
+      addProduct({...product, quantity})
+    );
+  };
+
   return (
     <Container>
       <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://www.finds.ir/img/2018092679100243.jpg" />
+        {cartProducts.map((item) => (
+          <Image src={item.img}/>
+          ))}
         </ImgContainer>
         <InfoContainer>
           <Title style={{textAlign: 'right'}} >Beats Pro هدفون بیتس پرو </Title>
@@ -144,11 +170,11 @@ const Product = () => {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <RemoveIcon onClick={() => handleQuantity("dec")}/>
+              <RemoveIcon style={{cursor: 'pointer'}} onClick={() => handleQuantity("dec")}/>
               <Amount>{quantity}</Amount>
-              <AddIcon onClick={() => handleQuantity("inc")}/>
+              <AddIcon style={{cursor: 'pointer'}} onClick={() => handleQuantity("inc")}/>
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

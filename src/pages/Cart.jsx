@@ -1,5 +1,6 @@
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useSelector } from 'react-redux';
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -159,6 +160,7 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  const cart = useSelector(state=>state.cart)
   return (
     <Container>
       <Navbar />
@@ -175,7 +177,8 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            <Product>
+            {cart.products.map((product) =>
+              <Product>
               <ProductDetail>
                 <Image src="https://www.finds.ir/img/2018092679100243.jpg" />
                 <Details>
@@ -191,41 +194,21 @@ const Cart = () => {
               <PriceDetail>
                 <ProductAmountContainer>
                   <AddIcon />
-                  <ProductAmount>2</ProductAmount>
+                  <ProductAmount>{product.quantity}</ProductAmount>
                   <RemoveIcon />
                 </ProductAmountContainer>
-                <ProductPrice>1800000 تومان</ProductPrice>
+                <ProductPrice>تومان {900000 * product.quantity}</ProductPrice>
               </PriceDetail>
             </Product>
+            )}
             <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1660803972361" />
-                <Details>
-                  <ProductName>
-                    <b>Product :</b> AirPods Pro (2nd generation)
-                  </ProductName>
-                  <ProductId>
-                    <b>ID :</b> 2
-                  </ProductId>
-                  <ProductColor color="black" />
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <AddIcon />
-                  <ProductAmount>1</ProductAmount>
-                  <RemoveIcon />
-                </ProductAmountContainer>
-                <ProductPrice>6000000 تومان</ProductPrice>
-              </PriceDetail>
-            </Product>
+
           </Info>
           <Summary>
             <SummaryTitle>خلاصه سفارش</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>جمع فرعی</SummaryItemText>
-              <SummaryItemPrice>7800000 تومان</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total} تومان</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>حمل و نقل برآورد شده</SummaryItemText>
@@ -237,7 +220,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>جمع کل</SummaryItemText>
-              <SummaryItemPrice>7830000 تومان</SummaryItemPrice>
+              <SummaryItemPrice>{cart.total} تومان</SummaryItemPrice>
             </SummaryItem>
             <Button>اکنون تسویه حساب کنید</Button>
           </Summary>
