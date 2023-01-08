@@ -104,7 +104,7 @@ const Amount = styled.span`
 const Button = styled.button`
   padding: 15px;
   border: 2px solid teal;
-  background-color: white;
+  background-color: #ffffff;
   cursor: pointer;
   font-weight: 500;
 

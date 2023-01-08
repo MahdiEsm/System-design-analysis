@@ -8,14 +8,14 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 500;
 `
 
 const Announcement = () => {
   return (
     <Container>
-        Super Deal! Free Shopping on orders over $50
+       ** تخفیف های جدید و شگفت انگیز در راه است **
     </Container>
   )
 }

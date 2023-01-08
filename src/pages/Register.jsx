@@ -76,8 +76,8 @@ const Register = () => {
           <Input placeholder="نام کاربری" />
           <Input placeholder="تکرار رمزعبور" />
           <Input placeholder="رمزعبور" />
-          <Agreement>
-            با ایجاد یک حساب کاربری، من با پردازش اطلاعات شخصی خود مطابق با سیاست حفظ حریم خصوصی موافقت می کنم.
+          <Agreement style={{textAlign: 'right'}}>
+            با ایجاد یک حساب کاربری، من با پردازش اطلاعات شخصی خود مطابق با سیاست حفظ حریم خصوصی موافقت می کنم
           </Agreement>
           <Button>ایجاد کردن</Button>
         </Form>

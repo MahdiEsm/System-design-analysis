@@ -11,8 +11,11 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
+  border: 6px solid;
+  border-color: #c7a470;
+  //border-image: repeating-linear-gradient(45deg, #522c2c, #53324c, #ddda33 30px) 10;
   width: 100%;
-  height: 100%;
+  height: 90%;
   object-fit: cover;
   ${mobile({ height: "20vh" })}
 
@@ -31,15 +34,17 @@ const Info = styled.div`
 `;
 
 const Title = styled.h1`
-    color:white;
+    color:black;
     margin-bottom: 20px;
 `;
 
 const Button = styled.button`
     border:none;
     padding: 10px;
-    background-color: white;
-    color:gray;
+    border: 2px solid;
+    border-color: black;
+    background-color: #ae9898;
+    color:black;
     cursor: pointer;
     font-weight: 600;
 `;

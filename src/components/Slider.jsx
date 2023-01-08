@@ -80,7 +80,7 @@ const Desc = styled.p`
 const Button = styled.button`
     margin-left: 50px;
     padding: 10px;
-    background-color: transparent;
+    background-color: #f8eddc;
     cursor: pointer;
 `;
 

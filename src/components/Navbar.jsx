@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     height: 60px;
+    background-color:rgba(63, 63, 63, 0.182);
     ${mobile({ height: "50px" })}
 `
 const Wrapper = styled.div`
@@ -60,7 +61,9 @@ const Right = styled.div`
     ${mobile({ flex: 2.3, justifyContent: "center" })}
 `
 const MenuItem = styled.div`
+    color:  black;
     font-size: 14px;
+
     cursor: pointer;
     margin-left: 25px;
     ${mobile({ fontSize: "12px", marginLeft: "10px" })}
@@ -81,14 +84,14 @@ const Navbar = ()=> {
             </Left>
             <Center>
                 <Logo>
-                    LAMA.
+                digital market
                 </Logo>
             </Center>
             <Right>
-                <Link to="/register">
+                <Link style={{textDecoration: 'none'}}   to="/register">
                     <MenuItem>REGISTER</MenuItem>
                 </Link>
-                <Link to="/login">
+                <Link style={{textDecoration: 'none'}} to="/login">
                     <MenuItem>SING IN</MenuItem>
                 </Link>
                 <Link to="/cart">

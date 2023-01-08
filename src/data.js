@@ -1,17 +1,17 @@
 export const sliderItems =[
   {
       id: 1,
-      img: "https://www.finds.ir/img/2018092679100243.jpg" ,
-      title: "Beats Pro هدفون بیتس پرو " ,
-      desc: " قابل تا شدن جهت حمل نقل آسان ارائه صدای شفاف و فرکانس‌های بسیار دقیق،ایده آل برای تدوینگران صوتی صدای بیس فوق‌العاده رسا و با کیفیت بدنه تمام آلومینیومی " ,
-      bg: "f3d9c7" ,
+      img: "https://media.croma.com/image/upload/v1662703400/Croma%20Assets/Communication/Mobiles/Images/261991_4_dp8elq.png" ,
+      title: "iphone 14 pro max" ,
+      desc: " به عنوان قلب تپنده بهره می برد   A16 ایفون 14 پرومکس از یک تراشه جدید به نام " ,
+      bg: "d1dfcdee" ,
   },
   {
       id: 2,
       img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1660803972361" ,
       title: "AirPods Pro (2nd generation)" ,
       desc: "برای ارائه قابلیت حذف نویز فعال تا 2 برابر بیشتر مهندسی شده است. شفافیت تطبیقی نویز خارجی را کاهش می دهد، در حالی که صدای فضایی شخصی شما را در صدا غرق می کند. یک بار شارژ تا 6 ساعت عمر باتری را ارائه می دهد" ,
-      bg: "c7f3ce" ,
+      bg: "f4f1d8ec" ,
   },
   {
       id: 3,
@@ -25,19 +25,19 @@ export const sliderItems =[
 export const categories = [
     {
       id: 1,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8Yj-4yK8tOxAFBWzAyvs22SeipbtCviX3w&usqp=CAU",
+      img: "https://www.finds.ir/img/2018092679100243.jpg",
       title: "Airpod",
       cat: "Airpod"
     },
     {
       id: 2,
-      img: "https://www.finds.ir/img/2018092679100243.jpg",
+      img: "https://playstoreopal.com/wp-content/uploads/2022/10/iPhone_14_Pro_Deep_Purple_PDP_Image_Position-5_EN-scaled-1.jpg",
       title: "Phone",
       cat: "Phone"
     },
     {
       id: 3,
-      img: "https://www.finds.ir/img/2018092679100243.jpg",
+      img: "https://dkstatics-public.digikala.com/digikala-products/f880254cbe5fb6ab4adf6e1eb40cadb5931ac4c9_1666687211.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
       title: "Laptop",
       cat: "Laptop"
     },
@@ -46,35 +46,35 @@ export const categories = [
   export const popularProducts = [
     {
       id: "a",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8Yj-4yK8tOxAFBWzAyvs22SeipbtCviX3w&usqp=CAU",
+      img:"https://www.finds.ir/img/2018092679100243.jpg",
     },
     {
       id: "b",
-      img:"https://www.finds.ir/img/2018092679100243.jpg",
+      img:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1660803972361",
     },
     {
       id: "c",
-      img:"https://www.finds.ir/img/2018092679100243.jpg",
+      img:"https://farasystm.com/wp-content/uploads/2021/08/%D9%81%D8%B1%D9%88%D8%B4%DA%AF%D8%A7%D9%87-%D9%81%D8%B1%D8%A7%D8%B3%DB%8C%D8%B3%D8%AA%D9%85-QCY-T13-01.jpg",
     },
     {
       id: "d",
-      img:"https://www.finds.ir/img/2018092679100243.jpg",
+      img:"https://applestoreheravi.com/wp-content/uploads/2022/08/mbp-silver-select-202206-1.jpg",
     },
     {
       id: "e",
-      img:"https://www.finds.ir/img/2018092679100243.jpg",
+      img:"https://media.croma.com/image/upload/v1662703400/Croma%20Assets/Communication/Mobiles/Images/261991_4_dp8elq.png",
     },
     {
       id: "f",
-      img:"https://www.finds.ir/img/2018092679100243.jpg",
+      img:"https://www.asus.com/media/Odin/Websites/global/ProductLine/20200824120814.jpg",
     },
     {
       id: "g",
-      img:"https://www.finds.ir/img/2018092679100243.jpg",
+      img:"https://alaneesqatar.qa/wp-content/uploads/2021/02/samsung-galaxy-note-20-4g-grey-4.png",
     },
     {
       id: "h",
-      img:"C",
+      img:"https://tellstar.ir/wp-content/uploads/2021/02/Samsung-Galaxy-Buds-Pro-leak-2-960x540-1.jpg",
     },
   ]
 
