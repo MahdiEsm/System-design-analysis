@@ -23,11 +23,14 @@ const Left = styled.div`
 const Logo = styled.h1``;
   
 const Desc = styled.p`
-    margin: 20px 0px;
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
+    margin: 30px 0px 30px 0px;
 `;
   
 const SocialContainer = styled.div`
     display: flex;
+    margin-left: 60px;
 `;
   
 const SocialIcon = styled.div`
@@ -45,6 +48,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
     flex: 1;
     padding: 20px;
+    margin: 0px 200px;
     ${mobile({ display: "none" })}
 `;
   
@@ -100,11 +104,9 @@ const Footer = () => {
           </List>
         </Center>
         <Right>
-        <Logo>LAMA.</Logo>
-          <Desc>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don’t look even slightly believable.
+        <Logo style={{textAlign: 'center'}}>Digital market</Logo>
+          <Desc style={{textAlign: 'right'}}>
+این سایت برای فروش محصولات دیجیتالی مورد استفاده برای عموم مردم با بالاترین کیفیت و بهترین قیمت است 
           </Desc>
           <SocialContainer>
             <SocialIcon color="3B5999">

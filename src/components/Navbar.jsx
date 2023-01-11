@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     height: 60px;
-    background-color:rgba(63, 63, 63, 0.182);
+    background-color:rgba(234, 145, 208, 0.833);
     ${mobile({ height: "50px" })}
 `
 const Wrapper = styled.div`
@@ -79,12 +79,12 @@ const Navbar = ()=> {
                 <Language>فارسی</Language>
                 <SearchContainer>
                     <Input placeholder="جستجو"/> 
-                    <SearchIcon style={{color:"gray", fontSiz:16}}/>
+                    <SearchIcon style={{color:"black", fontSiz:16}}/>
                 </SearchContainer>
             </Left>
             <Center>
                 <Logo>
-                digital market
+                Digital market
                 </Logo>
             </Center>
             <Right>
