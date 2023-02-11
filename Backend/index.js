@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const userRoute = require("./routrs/user");
 const authRoute = require("./routrs/auth")
-
+const  cors = require("cors");
 mongoose.connect(
     "mongodb+srv://mahdiesm:mmaahhddii@cluster0.rtbifmm.mongodb.net/sad?retryWrites=true&w=majority"
 ).then(() => console.log("DB connect success"))
@@ -12,6 +12,7 @@ mongoose.connect(
 });
 
 app.use(express.json());
+app.use(cors()); 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 
