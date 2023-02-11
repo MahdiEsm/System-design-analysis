@@ -1,5 +1,8 @@
 import styled from "styled-components";
+import { login } from "../redux/apiCalls";
 import {mobile} from "../responsive";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 const Container = styled.div`
   width: 100vw;
@@ -51,6 +54,10 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
+  &:disabled {
+    color: green;
+    cursor: not-allowed;
+  }
 `;
 
 const Link = styled.a`
@@ -61,15 +68,38 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
+const Error = styled.span`
+  color: red;
+`;
+
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    login(dispatch, { username, password });
+  };
+
   return (
     <Container>
       <Wrapper>
         <Title>ورود</Title>
         <Form>
-          <Input placeholder="نام کاربری" />
-          <Input placeholder="رمز عبور" />
-          <Button>وارد شدن</Button>
+          <Input 
+            placeholder="نام کاربری" 
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Input 
+            placeholder="رمز عبور" 
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button onClick={handleClick} disabled={isFetching}>
+            وارد شدن
+          </Button>
+          {error && <Error>Something went wrong...</Error>}
           <Link>فراموشی رمزعبور</Link>
           <Link>ایجاد یک حساب کاربری جدید</Link>
         </Form>
