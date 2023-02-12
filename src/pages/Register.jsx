@@ -1,5 +1,8 @@
+import { register } from "../redux/apiCalls";
+import { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+
 
 const Container = styled.div`
   width: 100vw;
@@ -64,22 +67,44 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+
 const Register = () => {
+  const [username, setUsername] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    register({firstname, username, email, password});
+  };
+
   return (
     <Container>
       <Wrapper>
         <Title>ایجاد حساب کاربری</Title>
-        <Form>
-          <Input placeholder="نام خانوادگی" />
-          <Input placeholder="نام" />
-          <Input placeholder="ایمیل" />
-          <Input placeholder="نام کاربری" />
-          <Input placeholder="تکرار رمزعبور" />
-          <Input placeholder="رمزعبور" />
+        <Form> 
+          <Input 
+            placeholder="نام کاربری" 
+            onChange={(e) => setUsername(e.target.value)}
+          />         
+          <Input 
+            placeholder="نام" 
+            onChange={(e) => setFirstname(e.target.value)}  
+          />          
+          <Input 
+            placeholder="رمزعبور" 
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Input 
+            placeholder="ایمیل" 
+            onChange={(e) => setEmail(e.target.value)}  
+          />
+
           <Agreement style={{textAlign: 'right'}}>
             با ایجاد یک حساب کاربری، من با پردازش اطلاعات شخصی خود مطابق با سیاست حفظ حریم خصوصی موافقت می کنم
           </Agreement>
-          <Button>ایجاد کردن</Button>
+          <Button onClick={handleClick}>ایجاد کردن</Button>
         </Form>
       </Wrapper>
     </Container>
