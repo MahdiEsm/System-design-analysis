@@ -63,7 +63,6 @@ const Right = styled.div`
 const MenuItem = styled.div`
     color:  black;
     font-size: 14px;
-
     cursor: pointer;
     margin-left: 25px;
     ${mobile({ fontSize: "12px", marginLeft: "10px" })}
@@ -71,7 +70,7 @@ const MenuItem = styled.div`
 
 const Navbar = ()=> {
   const quantity = useSelector(state=>state.cart.quantity)
-  console.log(quantity) 
+
   return (
     <Container>
         <Wrapper>
@@ -83,9 +82,11 @@ const Navbar = ()=> {
                 </SearchContainer>
             </Left>
             <Center>
-                <Logo>
-                Digital market
-                </Logo>
+                <Link style={{textDecoration: 'none', color: "black"}} to="/">
+                    <Logo>
+                        Digital market
+                    </Logo>
+                </Link>
             </Center>
             <Right>
                 <Link style={{textDecoration: 'none'}}   to="/register">
