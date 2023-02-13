@@ -3,26 +3,31 @@ import { login } from "../redux/apiCalls";
 import {mobile} from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Announcement from "../components/Announcement";
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.041),
+      rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0)
     ),
-    url("https://www.pngitem.com/pimgs/m/513-5131515_website-background-design-illustration-hd-png-download.png")
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpqJkt4UJGxna4L6QNvwGZKvbFBbUSirrCxfrOq2wAco1wT30oRXAXd6bjJRAgZu7oQk&usqp=CAU")
       center;
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 `;
 
 const Wrapper = styled.div`
   width: 25%;
+  margin: 120px 10px 50px 480px;
   padding: 20px;
-  background-color: white;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.511),
+      rgba(255, 255, 255, 0.29)
+    );
   ${mobile({ width: "75%" })}
 `;
 
@@ -60,7 +65,7 @@ const Button = styled.button`
   }
 `;
 
-const Link = styled.a`
+const Linked = styled.a`
   margin: 5px 0px;
   font-size: 18px;
   text-align: right; 
@@ -85,6 +90,8 @@ const Login = () => {
 
   return (
     <Container>
+      <Navbar />
+      <Announcement />
       <Wrapper>
         <Title>ورود</Title>
         <Form>
@@ -100,8 +107,10 @@ const Login = () => {
             وارد شدن
           </Button>
           {error && <Error>Something went wrong...</Error>}
-          <Link>فراموشی رمزعبور</Link>
-          <Link>ایجاد یک حساب کاربری جدید</Link>
+          <Linked>فراموشی رمزعبور</Linked>
+          <Link style={{textAlign: 'right', color: "black"}}  to="/register">
+            <Linked >ایجاد یک حساب کاربری جدید</Linked>
+          </Link>
         </Form>
       </Wrapper>
     </Container>

@@ -1,6 +1,7 @@
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -35,16 +36,6 @@ const TopButton = styled.button`
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
   color: ${(props) => props.type === "filled" && "white"};
-`;
-
-const TopTexts = styled.div`
-  ${mobile({ display: "none" })}
-`;
-const TopText = styled.span`
-  font-size: 17px;
-  text-decoration: underline;
-  cursor: pointer;
-  margin: 0px 10px;
 `;
 
 const Bottom = styled.div`
@@ -168,27 +159,24 @@ const Cart = () => {
       <Wrapper>
         <Title>سبد شما</Title>
         <Top>
-          <TopButton>ادامه خرید</TopButton>
-          <TopTexts> 
-            <TopText>علاقه مندی ها (0)</TopText>
-            <TopText>سبد خرید (2)</TopText>
-          </TopTexts>
-          <TopButton type="filled">اکنون تسویه حساب کنید</TopButton>
+          <Link to="/">
+            <TopButton>ادامه خرید</TopButton>
+          </Link>
         </Top>
         <Bottom>
           <Info>
             {cart.products.map((product) =>
               <Product>
               <ProductDetail>
-                <Image src="https://www.finds.ir/img/2018092679100243.jpg" />
+                <Image src={product.img} />
                 <Details>
                   <ProductName>
-                    <b>Product :</b> Beats Pro هدفون بیتس پرو  
+                    <b>Product :</b> {product.title}
                   </ProductName>
                   <ProductId>
-                    <b>ID :</b> 1
+                    <b>ID :</b> {product._id}
                   </ProductId>
-                  <ProductColor color="black" />
+                  <ProductColor color={product.color} />
                 </Details>
               </ProductDetail>
               <PriceDetail>
@@ -197,7 +185,7 @@ const Cart = () => {
                   <ProductAmount>{product.quantity}</ProductAmount>
                   <RemoveIcon />
                 </ProductAmountContainer>
-                <ProductPrice>تومان {900000 * product.quantity}</ProductPrice>
+                <ProductPrice>تومان {product.price*product.quantity}</ProductPrice>
               </PriceDetail>
             </Product>
             )}
@@ -216,7 +204,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>تخفیف</SummaryItemText>
-              <SummaryItemPrice>-20000 تومان</SummaryItemPrice>
+              <SummaryItemPrice>-50000 تومان</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>جمع کل</SummaryItemText>

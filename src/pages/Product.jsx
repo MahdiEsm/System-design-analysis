@@ -9,7 +9,7 @@ import { mobile } from "../responsive";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { useLocation } from 'react-router-dom';
-import { cartProducts } from "../data";
+import { publicRequest } from "../requestMethods";
 
 const Container = styled.div``;
 
@@ -118,12 +118,14 @@ const Product = () => {
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        setProduct(cartProducts);
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
       } catch {}
     };
     getProduct();
@@ -140,7 +142,7 @@ const Product = () => {
 
   const handleClick = () => {
     dispatch(
-      addProduct({...product, quantity})
+      addProduct({...product, quantity, color})
     );
   };
 
@@ -150,22 +152,18 @@ const Product = () => {
       <Announcement />
       <Wrapper>
         <ImgContainer>
-        {cartProducts.map((item) => (
-          <Image src={item.img}/>
-          ))}
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title style={{textAlign: 'right'}} >Beats Pro هدفون بیتس پرو </Title>
-          <Desc style={{textAlign: 'right'}} >
-          قابل تا شدن جهت حمل نقل آسان ارائه صدای شفاف و فرکانس‌های بسیار دقیق،ایده آل برای تدوینگران صوتی صدای بیس فوق‌العاده رسا و با کیفیت بدنه تمام آلومینیومی 
-          </Desc>
-          <Price>تومان900000</Price>
+          <Title style={{textAlign: 'right'}} >{product.title}</Title>
+          <Desc style={{textAlign: 'right'}} >{product.desc}</Desc>
+          <Price>تومان{product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              {product.color?.map((c) => (
+                <FilterColor color={c} key={c} onClick={() => setColor(c)}/>
+              ))}
             </Filter>
           </FilterContainer>
           <AddContainer>

@@ -2,6 +2,8 @@ import { register } from "../redux/apiCalls";
 import { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import Navbar from "../components/Navbar";
+import Announcement from "../components/Announcement";
 
 
 const Container = styled.div`
@@ -14,19 +16,17 @@ const Container = styled.div`
     url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwpqJkt4UJGxna4L6QNvwGZKvbFBbUSirrCxfrOq2wAco1wT30oRXAXd6bjJRAgZu7oQk&usqp=CAU")
       center;
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 `;
 
 const Wrapper = styled.div`
   width: 40%;
-  padding: 20px;
+  margin: 120px 10px 50px 350px;
+  padding: 30px;
   background: linear-gradient(
       rgba(255, 255, 255, 0.511),
       rgba(255, 255, 255, 0.29)
     );
-
   ${mobile({ width: "75%" })}
 `;
 
@@ -81,6 +81,8 @@ const Register = () => {
 
   return (
     <Container>
+      <Navbar />
+      <Announcement />
       <Wrapper>
         <Title>ایجاد حساب کاربری</Title>
         <Form> 
