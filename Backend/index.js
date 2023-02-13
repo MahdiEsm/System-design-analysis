@@ -6,6 +6,7 @@ const authRoute = require("./routrs/auth");
 const productRoute = require("./routrs/product");
 const cartRoute = require("./routrs/cart");
 const orderRoute = require("./routrs/order");
+const stripeRoute = require("./routrs/stripe");
 const  cors = require("cors");
 
 mongoose.connect(
@@ -22,6 +23,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
+app.use("/api/checkout", stripeRoute);
 
 app.listen(5000, () => {
     console.log("backend is running")
