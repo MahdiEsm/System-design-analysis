@@ -1,12 +1,16 @@
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import StripeCheckout from 'react-stripe-checkout';
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+
+const KEY = "pk_test_51Mb4piD9kEyjjKdLLibVG5TR8UbJS5jCowYKLSQFdfQdeA0y8EmoXNPgk3CywMvAiI3L3sWRWBSLHE0TLzYezjhN006nymn2zy"
 
 const Container = styled.div``;
 
@@ -145,13 +149,23 @@ const Button = styled.button`
   font-size: 17px;
   width: 100%;
   padding: 10px;
+  cursor: pointer;
   background-color: black;
   color: white;
   font-weight: 600;
 `;
 
 const Cart = () => {
-  const cart = useSelector(state=>state.cart)
+  const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
+
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  console.log(stripeToken)
+
   return (
     <Container>
       <Navbar />
@@ -210,7 +224,18 @@ const Cart = () => {
               <SummaryItemText>جمع کل</SummaryItemText>
               <SummaryItemPrice>{cart.total} تومان</SummaryItemPrice>
             </SummaryItem>
-            <Button>اکنون تسویه حساب کنید</Button>
+            <StripeCheckout
+              name="Digital Market"
+              image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRINi-9vvoYN2c-W45s8bB_7Fz1ZDApTp4-jw&usqp=CAU"
+              billingAddress
+              shippingAddress
+              description={`Your total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={KEY}
+            >
+              <Button>اکنون تسویه حساب کنید</Button> 
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>
