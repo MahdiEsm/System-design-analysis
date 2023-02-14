@@ -6,6 +6,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { Link } from 'react-router-dom';
   
 const Container = styled.div`
     display: flex;
@@ -46,8 +47,9 @@ const SocialIcon = styled.div`
 `;
   
 const Center = styled.div`
-    flex: 1;
+    //flex: 1;
     padding: 20px;
+    //flex-direction: column;
     margin: 0px 200px;
     ${mobile({ display: "none" })}
 `;
@@ -88,19 +90,21 @@ const Footer = () => {
         <Left>
           <Title>تماس</Title>
           <ContactItem>
-            <RoomIcon style={{marginRight:"10px"}}/> آدرس :
+            <RoomIcon style={{marginRight:"10px"}}/> آدرس :  زنجان - دانشگاه زنجان   
           </ContactItem>
           <ContactItem>
-            <LocalPhoneIcon style={{marginRight:"10px"}}/> شماره تماس :
+            <LocalPhoneIcon style={{marginRight:"10px"}}/> شماره تماس : 02444444444
           </ContactItem>
           <ContactItem>
-            <MailOutlineIcon style={{marginRight:"10px"}} /> ایمیل :
+            <MailOutlineIcon style={{marginRight:"10px"}} />mahdiesm8013@gmail.com : ایمیل 
           </ContactItem>
         </Left>
         <Center>
           <Title>لینک های مفید</Title>
           <List>
-            <ListItem>Home</ListItem>
+            <Link style={{textDecoration: 'none', color: "black", marginRight: '40px'}} to="/">
+              <ListItem>Home</ListItem>
+            </Link>
           </List>
         </Center>
         <Right>

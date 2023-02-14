@@ -1,7 +1,7 @@
 import Badge from '@mui/material/Badge';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import SearchIcon from '@mui/icons-material/Search';
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { mobile } from "../responsive";
 import { useSelector } from 'react-redux';
@@ -31,7 +31,6 @@ const Language = styled.span`
 `
 
 const SearchContainer = styled.div`
-   // border: 1px solid lightgray;
     display: flex;
     align-items: center;
     margin-left: 25px;
@@ -70,15 +69,20 @@ const MenuItem = styled.div`
 
 const Navbar = ()=> {
   const quantity = useSelector(state=>state.cart.quantity)
-
+  const [query, setQuery] = useState("");
+  console.log(query)
   return (
     <Container>
         <Wrapper>
             <Left>
                 <Language>فارسی</Language>
                 <SearchContainer>
-                    <Input placeholder="جستجو"/> 
-                    <SearchIcon style={{color:"black", fontSiz:16}}/>
+                    <Input placeholder="جستجو"
+                    onChange={(e) => setQuery(e.target.value)}
+                    /> 
+                    <Link to={`/products/${query}`}>
+                        <SearchIcon style={{color:"black", fontSiz:16}}/>
+                    </Link>
                 </SearchContainer>
             </Left>
             <Center>
