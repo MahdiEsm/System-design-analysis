@@ -107,7 +107,6 @@ const Login = () => {
             وارد شدن
           </Button>
           {error && <Error>Something went wrong...</Error>}
-          <Linked>فراموشی رمزعبور</Linked>
           <Link style={{textAlign: 'right', color: "black"}}  to="/register">
             <Linked >ایجاد یک حساب کاربری جدید</Linked>
           </Link>
